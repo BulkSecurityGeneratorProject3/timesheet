@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span>Timesheet</span> {{vm.timesheet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>First Name</span></dt>
+        <dd>
+            <span>{{vm.timesheet.firstName}}</span>
+        </dd>
+        <dt><span>Last Name</span></dt>
+        <dd>
+            <span>{{vm.timesheet.lastName}}</span>
+        </dd>
+        <dt><span>Day</span></dt>
+        <dd>
+            <span>{{vm.timesheet.day}}</span>
+        </dd>
+        <dt><span>Date</span></dt>
+        <dd>
+            <span>{{vm.timesheet.date | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Time In</span></dt>
+        <dd>
+            <span>{{vm.timesheet.timeIn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Time Out</span></dt>
+        <dd>
+            <span>{{vm.timesheet.timeOut | date:'medium'}}</span>
+        </dd>
+        <dt><span>Work Hours</span></dt>
+        <dd>
+            <span>{{vm.timesheet.workHours}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="timesheet-detail.edit({id:vm.timesheet.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
